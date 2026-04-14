@@ -1,0 +1,206 @@
+:root {
+    --body-bg: #f5f0e6;
+    --card-bg: #f8f4e3;
+    --title-color: #8B4513;
+    --accent-color: #556B2F;
+    --block-bg: #ffffff;
+    --border-style: 2px solid #556B2F;
+    --border-radius: 20px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--body-bg);
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.recipe-card {
+    max-width: 850px;
+    width: 100%;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Заголовок */
+.main-header {
+    text-align: center;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.main-header h1 {
+    color: var(--title-color);
+    font-family: 'Georgia', serif;
+    font-size: 2.8rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.description {
+    color: #777;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+/* Декор */
+.header-leaf {
+    position: absolute;
+    font-size: 3rem;
+    color: var(--accent-color);
+    opacity: 0.4;
+    user-select: none;
+}
+
+.leaf-top-right { top: -10px; right: -10px; transform: rotate(15deg); }
+.leaf-bottom-left { bottom: 10px; left: 10px; transform: rotate(-15deg); }
+
+/* Зображення */
+.recipe-image-container {
+    margin-bottom: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 350px;
+}
+
+.recipe-main-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Колонки */
+.content-columns {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.col {
+    flex: 1;
+    border: var(--border-style);
+    border-radius: var(--border-radius);
+    background-color: var(--block-bg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-header {
+    background-color: var(--block-bg);
+    padding: 15px;
+    text-align: center;
+    border-bottom: var(--border-style);
+}
+
+.section-header h2 {
+    margin: 0;
+    color: var(--accent-color);
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section-content {
+    padding: 25px;
+    flex-grow: 1;
+    position: relative;
+}
+
+/* Списки */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    padding-left: 20px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+ul li::before {
+    content: "•";
+    color: var(--accent-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+ol {
+    padding-left: 20px;
+    margin: 0;
+}
+
+ol li {
+    margin-bottom: 12px;
+}
+
+/* Блоки часу та калорій */
+.info-blocks {
+    margin-top: 25px;
+}
+
+.info-block {
+    background-color: var(--card-bg);
+    border: 1px solid #d4cdb4;
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.info-block span { display: block; }
+.info-block span:first-child { 
+    font-weight: bold; 
+    color: var(--title-color);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* ТАБЛИЦЯ */
+.nutrition-table-section {
+    border: var(--border-style);
+    border-radius: var(--border-radius);
+    background-color: var(--block-bg);
+    overflow: hidden;
+}
+
+.table-container {
+    padding: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+th {
+    color: var(--accent-color);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+tr:last-child td { border-bottom: none; }
+
+/* Мобільна адаптація */
+@media (max-width: 768px) {
+    .content-columns { flex-direction: column; }
+    .recipe-image-container { height: 250px; }
+    .main-header h1 { font-size: 2rem; }
+}
